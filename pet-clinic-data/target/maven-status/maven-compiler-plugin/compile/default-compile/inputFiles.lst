@@ -1,0 +1,14 @@
+/Users/serhat.tan/project/pet-clinic/pet-clinic-data/src/main/java/petclinic/model/BaseEntity.java
+/Users/serhat.tan/project/pet-clinic/pet-clinic-data/src/main/java/petclinic/model/Pet.java
+/Users/serhat.tan/project/pet-clinic/pet-clinic-data/src/main/java/services/map/OwnerServiceMap.java
+/Users/serhat.tan/project/pet-clinic/pet-clinic-data/src/main/java/petclinic/model/PetType.java
+/Users/serhat.tan/project/pet-clinic/pet-clinic-data/src/main/java/services/map/PetServiceMap.java
+/Users/serhat.tan/project/pet-clinic/pet-clinic-data/src/main/java/services/PetService.java
+/Users/serhat.tan/project/pet-clinic/pet-clinic-data/src/main/java/services/CrudService.java
+/Users/serhat.tan/project/pet-clinic/pet-clinic-data/src/main/java/petclinic/model/Vet.java
+/Users/serhat.tan/project/pet-clinic/pet-clinic-data/src/main/java/services/map/VetServiceMap.java
+/Users/serhat.tan/project/pet-clinic/pet-clinic-data/src/main/java/services/map/AbstractMapService.java
+/Users/serhat.tan/project/pet-clinic/pet-clinic-data/src/main/java/petclinic/model/Person.java
+/Users/serhat.tan/project/pet-clinic/pet-clinic-data/src/main/java/services/VetService.java
+/Users/serhat.tan/project/pet-clinic/pet-clinic-data/src/main/java/services/OwnerService.java
+/Users/serhat.tan/project/pet-clinic/pet-clinic-data/src/main/java/petclinic/model/Owner.java
