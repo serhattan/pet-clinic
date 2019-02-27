@@ -3,11 +3,19 @@ package services.map;
 import org.springframework.stereotype.Service;
 import petclinic.model.Owner;
 import services.OwnerService;
+import services.PetService;
+import services.PetTypeService;
 
 import java.util.Set;
 
 @Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
+
+    private final PetTypeService petTypeService;
+
+    public OwnerServiceMap(PetTypeService petTypeService) {
+        this.petTypeService = petTypeService;
+    }
 
     @Override
     public Set<Owner> findAll() {
@@ -21,7 +29,24 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 
     @Override
     public Owner save(Owner object) {
-        return super.save(object);
+        Owner savedOwner = null;
+
+        if (object != null) {
+            if (object.getPets() != null) {
+                object.getPets().forEach(pet -> {
+                    if (pet.getPetType() != null) {
+                        if (pet.getPetType().getId() == null) {
+                            pet.setPetType(petTypeService.save(pet.getPetType()));
+                        }
+                    } else {
+                        throw new RuntimeException("Pet Type is required");
+                    }
+                });
+            }
+            savedOwner = super.save(object);
+        }
+
+        return savedOwner;
     }
 
     @Override
