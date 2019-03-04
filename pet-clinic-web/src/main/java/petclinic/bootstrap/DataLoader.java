@@ -6,7 +6,6 @@ import petclinic.model.*;
 import services.*;
 
 import java.time.LocalDate;
-import java.util.Set;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -15,13 +14,14 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
-                      SpecialityService specialityService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -70,6 +70,14 @@ public class DataLoader implements CommandLineRunner {
         owner1.getPets().add(mikesPet);
 
         ownerService.save(owner1);
+
+        Visit petVisit = new Visit();
+        petVisit.setPet(mikesPet);
+        petVisit.setDate(LocalDate.now());
+        petVisit.setDescription("Sneezy Pet");
+
+        visitService.save(petVisit);
+
 
         Owner owner2 = new Owner();
         owner2.setFirstName("Fiona");

@@ -1,10 +1,12 @@
 package services.map;
 
+import org.springframework.stereotype.Service;
 import petclinic.model.Visit;
 import services.VisitService;
 
 import java.util.Set;
 
+@Service
 public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService {
     @Override
     public Set<Visit> findAll() {
@@ -32,6 +34,6 @@ public class VisitMapService extends AbstractMapService<Visit, Long> implements 
 
     @Override
     public void deleteById(Long id) {
-        super.deleteById();
+        super.deleteById(id);
     }
 }
