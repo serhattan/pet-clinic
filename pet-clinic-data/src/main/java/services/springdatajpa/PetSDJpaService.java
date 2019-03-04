@@ -20,11 +20,6 @@ public class PetSDJpaService implements PetService {
     }
 
     @Override
-    public Pet findByLastName(String lastName) {
-        return null;
-    }
-
-    @Override
     public Set<Pet> findAll() {
         Set<Pet> pets = new HashSet<>();
 

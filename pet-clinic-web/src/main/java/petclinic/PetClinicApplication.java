@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan({"services", "petclinic"})
+@ComponentScan({"services", "petclinic", "repositories"})
 public class PetClinicApplication {
 
     public static void main(String[] args) {

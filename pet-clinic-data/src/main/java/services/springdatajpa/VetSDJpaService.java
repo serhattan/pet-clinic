@@ -20,11 +20,6 @@ public class VetSDJpaService implements VetService {
     }
 
     @Override
-    public Vet findByLastName(String lastName) {
-        return null;
-    }
-
-    @Override
     public Set<Vet> findAll() {
         Set<Vet> vets = new HashSet<>();
 
