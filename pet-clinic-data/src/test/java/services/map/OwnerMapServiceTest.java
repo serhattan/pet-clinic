@@ -1,10 +1,9 @@
 package services.map;
 
+import buider.OwnerBuilder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import petclinic.model.Owner;
-import services.PetService;
-import services.PetTypeService;
 
 import java.util.Set;
 
@@ -40,14 +39,14 @@ class OwnerMapServiceTest {
 
     @Test
     void save() {
-        ownerMapService.save(Owner.builder().id(2L).build());
+        ownerMapService.save(OwnerBuilder.anOwner().id(2L).build());
 
         assertEquals(2, ownerMapService.findAll().size());
     }
 
     @Test
     void saveNoId() {
-        Owner savedOwner = ownerMapService.save(Owner.builder().build());
+        Owner savedOwner = ownerMapService.save(OwnerBuilder.anOwner().build());
 
         assertNotNull(savedOwner);
         assertNotNull(savedOwner.getId());
@@ -66,21 +65,4 @@ class OwnerMapServiceTest {
 
         assertEquals(0, ownerMapService.findAll().size());
     }
-
-    @Test
-    void findByLastName() {
-        Owner serhat = ownerMapService.findByLastName(lastName);
-
-        assertNotNull(serhat);
-
-        assertEquals(ownerId, serhat.getId());
-    }
-    
-    @Test
-    void findByLastNameNotFound() {
-        Owner serhat = ownerMapService.findByLastName("foo");
-
-        assertNull(serhat);
-    }
-
 }
