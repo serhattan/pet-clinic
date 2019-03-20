@@ -2,8 +2,8 @@ package petclinic.model;
 
 import lombok.*;
 
-import javax.persistence.*;
-import java.time.LocalDate;
+        import javax.persistence.*;
+        import java.time.LocalDate;
 
 @Getter
 @Setter
