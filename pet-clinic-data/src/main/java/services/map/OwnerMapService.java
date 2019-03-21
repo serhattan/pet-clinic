@@ -9,6 +9,7 @@ import services.PetTypeService;
 
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 @Profile({"default", "map"})
@@ -75,6 +76,9 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
 
     @Override
     public List<Owner> findAllByLastNameLike(String lastName) {
-        return null;
+        return this.findAll()
+                .stream()
+                .filter(owner -> owner.getLastName().matches(lastName))
+                .collect(Collectors.toList());
     }
 }
